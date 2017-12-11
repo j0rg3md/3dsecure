@@ -22,3 +22,5 @@
 hs_err_pid*
 /BancoServidor/nbproject/private/
 /BancoServidor/build/
+/BancoCliente/nbproject/private/
+/BancoCliente/build/

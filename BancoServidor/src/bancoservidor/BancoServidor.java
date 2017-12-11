@@ -22,9 +22,9 @@ public class BancoServidor {
      */
     public static void main(String[] args) {
         //Establece donde se encuentran el almacen de mi certificado y los de confianza
-        System.setProperty("javax.net.ssl.keyStore", "src\\certificados\\serverKeyBanco.jks");
+        System.setProperty("javax.net.ssl.keyStore", "src/certificados/nuevo/bancoServidor.jks");
         System.setProperty("javax.net.ssl.keyStorePassword","hola007");
-        System.setProperty("javax.net.ssl.trustStore", "src\\certificados\\serverTrustedKeyBanco.jks");
+        System.setProperty("javax.net.ssl.trustStore", "src/certificados/nuevo/serverTrusteKey.jks");
         System.setProperty("javax.net.ssl.trustStorePassword", "hola007");
         
         //Creo el SSL SOCKET
@@ -32,6 +32,8 @@ public class BancoServidor {
         try {
             ServerSocket serverSocket = serverFactory.createServerSocket(puerto);
             System.out.println("Servidor seguro iniciado en el puerto: "+puerto);
+            serverSocket.accept();
+            System.out.println("Alguien a entrado");
         } catch (IOException ex) {
             Logger.getLogger(BancoServidor.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("error: al crear el socket en el puerto: "+puerto);
